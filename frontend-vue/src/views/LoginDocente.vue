@@ -1,8 +1,32 @@
 <template>
 
-<div class="field">
-    <div class="flex align-items-center justify-content-center flex-wrap card-container blue-container">
-        <div class="surface-card p-4 shadow-4 border-round w-full lg:w-5">
+<div class="field" style="background-color:#CFDDF5;">
+<div height="20px"><br></div>
+
+<div class="grid">
+    <div class="col">
+         <div class="flex align-items-center justify-content-center flex-wrap card-container blue-container">
+        <div class="surface-card p-5 shadow-4 border-round w-full lg:w-10">
+    <div class="text-center mb-5">
+        <div class="text-900 text-3xl font-medium mb-3">Inicia Session con una de tus cuentas.</div>
+        <span class="text-600 font-medium line-height-3"></span>
+        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"></a>
+    </div>
+
+    <div>
+        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-warning"></ButtonTest>
+       <hr>
+        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-warning"></ButtonTest>
+
+    </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="col">
+         <div class="flex align-items-center justify-content-center flex-wrap card-container blue-container">
+        <div class="surface-card p-5 shadow-4 border-round w-full lg:w-11">
     <div class="text-center mb-5">
         <ImageTest src="../img/logo.png" alt="logo del colegio" height="75" class="mb-3" />
         <div class="text-900 text-3xl font-medium mb-3">Bienvenido Educador</div>
@@ -25,11 +49,18 @@
         </div>
 
         <ButtonTest label="Iniciar Sesion" icon="pi pi-user" class="w-full"></ButtonTest>
+        <hr>
+        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-warning"></ButtonTest>
+
     </div>
 
 
         </div>
     </div>
+    </div>
+</div>
+    
+    <div height="20"><br></div>
 </div>    
 
 </template>
@@ -44,3 +75,6 @@ export default {
     }
 }
 </script>
+<style>
+
+</style>
