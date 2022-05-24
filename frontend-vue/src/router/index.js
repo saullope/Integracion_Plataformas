@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import ViewRol from '../views/ViewRol.vue'
 import LoginDocente from '../views/LoginDocente.vue'
 import PrincipalDocente from '../views/PrincipalDocente.vue'
+import PlataformasEvaluacion from '../views/PlataformasEvaluacion.vue'
+import EvaluacionesDatos from '../views/EvaluacionesDatos.vue'
+import RegistroDocentes from '../views/RegistroDocentes.vue'
 
 const routes = [
   {
@@ -24,6 +27,21 @@ const routes = [
     path: '/principal',
     name: 'principaldocente',
     component: PrincipalDocente
+  },
+  {
+    path: '/plataformas',
+    name: 'plataformasevaluacion',
+    component: PlataformasEvaluacion
+  },
+  {
+    path: '/evaluaciondatos',
+    name: 'evaluaciondatos',
+    component: EvaluacionesDatos
+  },
+  {
+    path: '/registro',
+    name: 'registro',
+    component: RegistroDocentes
   }
   /** 
    * 

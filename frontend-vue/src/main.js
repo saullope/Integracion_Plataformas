@@ -17,6 +17,8 @@ import CheckBox from 'primevue/checkbox'
 import PasswordTest from 'primevue/password'
 import SidebarTest from 'primevue/sidebar'
 import PanelMenu from 'primevue/panelmenu'
+import TabView from 'primevue/tabview'
+import TabPanel from 'primevue/tabpanel'
 
 const app = createApp(App).use(store).use(router)
 
@@ -29,5 +31,7 @@ app.component('ImageTest', ImageTest)
 app.component('CheckBox', CheckBox)
 app.component('PasswordTest', PasswordTest)
 app.component('SidebarTest', SidebarTest)
-app.component('PanelMenu',PanelMenu)
+app.component('PanelMenu', PanelMenu)
+app.component('TabView', TabView)
+app.component('TabPanel', TabPanel)
 app.mount('#app')

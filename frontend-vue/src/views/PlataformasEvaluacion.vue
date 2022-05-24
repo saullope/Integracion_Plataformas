@@ -5,31 +5,29 @@
     </SidebarTest>
     <div class="card">
         <div class="flex flex-row flex-wrap card-container blue-container">
-        
-       <div class="col">
-            <ButtonTest icon="pi pi-bars" @click="visibleLeft = true" ></ButtonTest>
+            <div class="col">
+                <ButtonTest icon="pi pi-bars" @click="visibleLeft = true" ></ButtonTest>
+            </div>
+          
         </div>
     </div>
-    THIS IS THE PRINCIPAL VUE OF TEACHER
-    </div>
-
+    THIS IS PLATAFORMS VIEW
 </template>
 
 <script>
+
 import { items } from '../elementos/sidebar.js'
 
 export default {
+    name: "PlataformasEvaluacion",
+    props: [],
+    components: {
 
-    props:{
-        
-    },
-    components:{
-    
     },
     data(){
         return {
-            visibleLeft: false, 
-            items   
+            visibleLeft: false,
+            items
         }
     }
 }

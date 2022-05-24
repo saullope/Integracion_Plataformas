@@ -10,26 +10,21 @@
             <ButtonTest icon="pi pi-bars" @click="visibleLeft = true" ></ButtonTest>
         </div>
     </div>
-    THIS IS THE PRINCIPAL VUE OF TEACHER
+    THIS IS THE PRINCIPAL VUE OF EVALUATION
     </div>
-
 </template>
 
 <script>
 import { items } from '../elementos/sidebar.js'
 
 export default {
-
-    props:{
-        
-    },
-    components:{
-    
-    },
+    name: "EvaluacionDatos",
+    props: [],
+    components :{},
     data(){
         return {
-            visibleLeft: false, 
-            items   
+            visibleLeft: false,
+            items
         }
     }
 }
