@@ -7,6 +7,6 @@ git clone https://github.com/saullope/Integracion_Plataformas.git
 - cd  ..
 ### cd frontend-vue/
 - npm install
-#### correr feontend
+#### correr frontend
 - npm run serve
 
