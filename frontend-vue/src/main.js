@@ -19,6 +19,10 @@ import SidebarTest from 'primevue/sidebar'
 import PanelMenu from 'primevue/panelmenu'
 import TabView from 'primevue/tabview'
 import TabPanel from 'primevue/tabpanel'
+import DataTable from 'primevue/datatable'
+import ColumnTest from 'primevue/column'
+import ColumnGroup from 'primevue/columngroup';     //optional for column grouping
+import RowTest from 'primevue/row'
 
 const app = createApp(App).use(store).use(router)
 
@@ -34,4 +38,9 @@ app.component('SidebarTest', SidebarTest)
 app.component('PanelMenu', PanelMenu)
 app.component('TabView', TabView)
 app.component('TabPanel', TabPanel)
+app.component('DataTable', DataTable)
+app.component('ColumnTest', ColumnTest)
+app.component('ColumnGroup', ColumnGroup)
+app.component('RowTest', RowTest)
+
 app.mount('#app')

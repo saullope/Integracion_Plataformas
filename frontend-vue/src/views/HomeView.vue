@@ -57,17 +57,16 @@ export default {
 
       items: [
         {
-          label: "enlace de interes",
-          icon: "pi pi-fw pi-file"
+          label: "Institucion",
+          icon: "pi pi-fw pi-building"
         },
         {
-          label:"enlace de interes",
-          icon:"pi pi-fw pi-trash"
+          label:"Como iniciar",
+          icon:"pi pi-fw pi-question"
         },
         {
-          label:"enlace de interes",
-          icon:"pi pi-fw pi-pencil",
-          url:"/principal"
+          label:"Documentacion",
+          icon:"pi pi-fw pi-file"
         }
       ]
     }

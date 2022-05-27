@@ -2,22 +2,33 @@ const items = [
     {
         label: "Panel",
         icon: "pi pi-fw pi-home",
-        url: "/principal"
+        to: "/principal"
     },
     {
         label: "Plataformas",
         icon: "pi pi-fw pi-box",
-        url: "/plataformas"
+        to: "/plataformas"
     },
     {
         label: "Evaluaciones",
         icon: "pi pi-fw pi-book",
-        url: "/evaluaciondatos"
+        to: "/evaluaciondatos"
     },
     {
         label: "Registro",
-        icon: "pi pi-fw pi-pencil",
-        url: "/registro"
+        icon: "pi pi-fw pi-table",
+        items : [
+            {
+                label: "Grupos de Clase",
+                icon : "pi pi-fw pi-users",
+                to: "/registro"
+            },
+            {
+                label: "Estudiantes",
+                icon: "pi pi-fw pi-user",
+                to: "/registro-students"
+            }
+        ]
     },
     {
         label: "Reportes",

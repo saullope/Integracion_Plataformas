@@ -14,9 +14,9 @@
     </div>
 
     <div>
-        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-warning"></ButtonTest>
+        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-danger"></ButtonTest>
        <hr>
-        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-warning"></ButtonTest>
+        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b p-button-danger"></ButtonTest>
 
     </div>
 
@@ -43,14 +43,13 @@
         <div class="flex align-items-center justify-content-between mb-6">
             <div class="flex align-items-center">
                 <CheckBox id="rememberme1" :binary="true" v-model="checked" class="mr-2"></CheckBox>
-                <label for="rememberme1">Remember me</label>
+                <label for="rememberme1"></label>
             </div>
-            <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
+            <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">¿Olvido su Contraseña?</a>
         </div>
 
-        <ButtonTest label="Iniciar Sesion" icon="pi pi-user" class="w-full"></ButtonTest>
+        <ButtonTest @click="goToPrincipal" label="Iniciar Sesion" icon="pi pi-user" class="w-full"></ButtonTest>
         <hr>
-        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-warning"></ButtonTest>
 
     </div>
 
@@ -71,6 +70,11 @@ export default {
     data(){
         return {
             value1: null
+        }
+    },
+    methods: {
+        goToPrincipal(){
+            this.$router.push('/principal')
         }
     }
 }

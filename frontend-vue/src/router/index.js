@@ -5,7 +5,8 @@ import LoginDocente from '../views/LoginDocente.vue'
 import PrincipalDocente from '../views/PrincipalDocente.vue'
 import PlataformasEvaluacion from '../views/PlataformasEvaluacion.vue'
 import EvaluacionesDatos from '../views/EvaluacionesDatos.vue'
-import RegistroDocentes from '../views/RegistroDocentes.vue'
+import RegistroGrupos from '../views/RegistroGrupos.vue'
+import RegistroEstudiantes from '../views/RegistroEstudiantes.vue'
 
 const routes = [
   {
@@ -41,7 +42,12 @@ const routes = [
   {
     path: '/registro',
     name: 'registro',
-    component: RegistroDocentes
+    component: RegistroGrupos
+  },
+  {
+    path: "/registro-students",
+    name: "registro-students",
+    component: RegistroEstudiantes
   }
   /** 
    * 
