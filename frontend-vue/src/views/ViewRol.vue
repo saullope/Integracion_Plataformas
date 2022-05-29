@@ -11,7 +11,7 @@
                 </div>
                 <br>
                 <div class="flex align-items-center justify-content-center w-12rem">
-                    <ButtonTest @click="regresar" label="Regresar" icon="pi pi-arrow-left" class="p-button-rounded p-ripple" type="button"></ButtonTest>
+                    <Button @click="regresar" label="Regresar" icon="pi pi-arrow-left" class="p-button-rounded p-ripple" type="button" />
                 </div>    
             </div>
 <!--
@@ -23,17 +23,17 @@
                 <div class="mr-5 mb-5 flex align-items-center justify-content-center cursor-pointer" >
                     <div class=" w-20rem border-round">
                         <h2>Estudiantes</h2>
-                        <ButtonTest style="background:white" class="hover:border-700 w-740px p-ripple" >
-                            <ImageTest src="../img/kids_account.jpg" alt="Imagen ilustrativa de niños" width="300" height="300"/>
-                        </ButtonTest>
+                        <Button style="background:white" class="hover:border-700 w-740px p-ripple" >
+                            <Image src="../img/kids_account.jpg" alt="Imagen ilustrativa de niños" width="300" height="300"/>
+                        </Button>
                     </div>
                 </div>
                 <div class="ml-5 mb-5 flex align-items-center justify-content-center cursor-pointer">
                     <div class="w-20rem border-round">
                         <h2>Docente</h2>
-                        <ButtonTest @click="goLoginDocente" style="background:white" class="hover:border-700 w-100px p-ripple" >
-                            <ImageTest src="../img/teacher.jpg" alt="Imagen ilustrativa de niños" width="300" />
-                        </ButtonTest>
+                        <Button @click="goLoginDocente" style="background:white" class="hover:border-700 w-100px p-ripple" >
+                            <Image src="../img/teacher.jpg" alt="Imagen ilustrativa de niños" width="300" />
+                        </Button>
                     </div>
                 </div>
             </div>

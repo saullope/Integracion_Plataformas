@@ -1,0 +1,102 @@
+{
+    "data" : [
+        {
+           "id": 1,
+           "grupo":"1 A",
+           "carnet": "874ggs",
+           "nombre": "david",
+           "apellidos" : "Villa",
+           "telefono": "--",
+           "correo": "david.villa@gmail.com",
+           "clave":"klj98d",
+           "direccion" : {
+               "nacionalidad" : "Nicaraguense",
+               "ciudad" : "Carazo"
+            }
+        },
+        {
+            "id": 2,
+            "grupo":"1 A",
+            "carnet": "8394ty",
+            "nombre": "Jose",
+            "apellidos" : "Martinez",
+            "telefono": "--",
+            "correo": "jose.martinez@gmail.com",
+            "clave":"sjkd89",
+            "direccion" : {
+                "nacionalidad" : "Nicaraguense",
+                "ciudad" : "Managua"
+             }
+         },
+         {
+            "id": 3,
+            "grupo":"1 A",
+            "carnet": "ksld90",
+            "nombre": "Fabio",
+            "apellidos" : "Gonzalez",
+            "telefono": "--",
+            "correo": "fabio.gonzalez@gmail.com",
+            "clave":"skdjd87",
+            "direccion" : {
+                "nacionalidad" : "Nicaraguense",
+                "ciudad" : "Masaya"
+             }
+         },
+         {
+            "id": 4,
+            "grupo":"1 A",
+            "carnet": "6748u",
+            "nombre": "Hugo",
+            "apellidos" : "sanchez",
+            "telefono": "--",
+            "correo": "hugo.sanchez@gmail.com",
+            "clave":"hdjj56",
+            "direccion" : {
+                "nacionalidad" : "Nicaraguense",
+                "ciudad" : "Managua"
+             }
+         },
+         {
+            "id": 5,
+            "grupo":"1 A",
+            "carnet": "74uy4",
+            "nombre": "Martin",
+            "apellidos" : "Palermo",
+            "telefono": "--",
+            "correo": "martin.palermo@gmail.com",
+            "clave":"skud7",
+            "direccion" : {
+                "nacionalidad" : "Nicaraguense",
+                "ciudad" : "Granada"
+             }
+         },
+         {
+            "id": 6,
+            "grupo":"1 B",
+            "carnet": "78hsi",
+            "nombre": "Leonardo",
+            "apellidos" : "Lopez",
+            "telefono": "--",
+            "correo": "leonardo.lopez@gmail.com",
+            "clave":"ksjid7",
+            "direccion" : {
+                "nacionalidad" : "Nicaraguense",
+                "ciudad" : "Managua"
+             }
+         },
+         {
+            "id": 7,
+            "grupo":"1 A",
+            "carnet": "847ys",
+            "nombre": "Luis",
+            "apellidos" : "Diaz",
+            "telefono": "--",
+            "correo": "luis.diaz@gmail.com",
+            "clave":"sjkdu6",
+            "direccion" : {
+                "nacionalidad" : "Nicaraguense",
+                "ciudad" : "Managua"
+             }
+         }
+    ]
+}

@@ -3,19 +3,19 @@
 <div class="card">
   <div class="shadow-4 flex align-items-stretch card-container blue-container" style="min-height:70px; width:100%;">
     <div class="flex align-items-center justify-content-center" style="width:100px">
-      <ImageTest src="../img/logo.png" alt="" width="75"/>
+      <Image src="../img/logo.png" alt="" width="75"/>
     </div>
     <div class="flex align-items-center justify-content-center" style="width:270px">
       <h4>Live to Learn, Learn to Live! </h4>
     </div>
     <div class="col"></div>
     <div class="flex align-items-center justify-content-center">
-      <MenuBar :model="items">
+      <Menubar :model="items">
 
-      </MenuBar>
+      </Menubar>
     </div>
     <div class="flex align-items-center justify-content-end" style="width:200px">
-      <ButtonTest @click="seleccionarRol" label="Iniciar Sesion" icon="pi pi-sign-in" class="p-button-primary"></ButtonTest>
+      <Button @click="seleccionarRol" label="Iniciar Sesion" icon="pi pi-sign-in" class="p-button-primary" />
     </div>
 </div>
 </div>
@@ -28,8 +28,8 @@
             <div class="text-6xl font-bold mb-3">nombre del sistema</div>
             <p class="mt-0 mb-4 text-700 line-height-3">descripcion general del sistema.</p>
             
-            <ButtonTest label="Learn More" type="button" class="mr-3 p-button-raised"></ButtonTest>
-            <ButtonTest label="Live Demo" type="button" class="p-button-outlined"></ButtonTest>
+            <Button label="Learn More" type="button" class="mr-3 p-button-raised" />
+            <Button label="Live Demo" type="button" class="p-button-outlined" />
         </section>
     </div>
     <div class="col-12 md:col-6 overflow-hidden">

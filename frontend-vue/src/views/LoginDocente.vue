@@ -14,9 +14,9 @@
     </div>
 
     <div>
-        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b button-danger"></ButtonTest>
+        <Button label="Iniciar con Google" icon="pi pi-google" class="w-full b button-danger" />
        <hr>
-        <ButtonTest label="Iniciar con Google" icon="pi pi-google" class="w-full b p-button-danger"></ButtonTest>
+        <Button label="Iniciar con Google" icon="pi pi-google" class="w-full b p-button-danger" />
 
     </div>
 
@@ -28,7 +28,7 @@
          <div class="flex align-items-center justify-content-center flex-wrap card-container blue-container">
         <div class="surface-card p-5 shadow-4 border-round w-full lg:w-11">
     <div class="text-center mb-5">
-        <ImageTest src="../img/logo.png" alt="logo del colegio" height="75" class="mb-3" />
+        <Image src="../img/logo.png" alt="logo del colegio" height="75" class="mb-3" />
         <div class="text-900 text-3xl font-medium mb-3">Bienvenido Educador</div>
         <span class="text-600 font-medium line-height-3"></span>
         <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"></a>
@@ -42,13 +42,13 @@
         <InputText id="email1" type="password" class="w-full mb-3" />
         <div class="flex align-items-center justify-content-between mb-6">
             <div class="flex align-items-center">
-                <CheckBox id="rememberme1" :binary="true" v-model="checked" class="mr-2"></CheckBox>
+                <Checkbox id="rememberme1" :binary="true" v-model="checked" class="mr-2" />
                 <label for="rememberme1"></label>
             </div>
             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">¿Olvido su Contraseña?</a>
         </div>
 
-        <ButtonTest @click="goToPrincipal" label="Iniciar Sesion" icon="pi pi-user" class="w-full"></ButtonTest>
+        <Button @click="goToPrincipal" label="Iniciar Sesion" icon="pi pi-user" class="w-full" />
         <hr>
 
     </div>
