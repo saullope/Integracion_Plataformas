@@ -1,5 +1,5 @@
 <template>
-    <div class="contenedor-padre" style="background-color:#CFDDF5;">
+    <div class="contenedor-padre" style="background-color:white;">
 
             
     <div class="justify-content-center bg-blue-50">
