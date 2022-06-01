@@ -24,12 +24,12 @@
 <div class="grid grid-nogutter surface-section text-800">
     <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
         <section>
-            <span class="block text-6xl font-bold mb-1">nombre del sistema</span>
-            <div class="text-6xl font-bold mb-3">nombre del sistema</div>
-            <p class="mt-0 mb-4 text-700 line-height-3">descripcion general del sistema.</p>
+            <span class="block text-6xl font-bold mb-1">"Sistema Web de Integración de Plataformas de Evaluación."
+</span>
+            <div class="text-6xl font-bold mb-3"></div>
+            <p class="mt-0 mb-4 text-700 line-height-3">Sistema Web de Integración de Plataformas para la Evaluación Educativa de los Estudiantes de Primaria de St. Mary School.</p>
             
-            <Button label="Learn More" type="button" class="mr-3 p-button-raised" />
-            <Button label="Live Demo" type="button" class="p-button-outlined" />
+            <Button label="Aprende mas!" type="button" class="p-button-outlined" />
         </section>
     </div>
     <div class="col-12 md:col-6 overflow-hidden">
