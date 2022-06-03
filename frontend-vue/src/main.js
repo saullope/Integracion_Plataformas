@@ -34,11 +34,17 @@ import FileUpload from 'primevue/fileupload'
 import Rating from 'primevue/rating'
 import ToastMessage from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
+import SplitButton from 'primevue/splitbutton'
+import ConfirmationService from 'primevue/confirmationservice'
+import ConfirmDialog from 'primevue/confirmdialog'
 
 const app = createApp(App).use(store).use(router)
 
 app.use(PrimeVue, {ripple: true})
 app.use(ToastService)
+app.use(ConfirmationService);
+app.component('ConfirmDialog',ConfirmDialog)
+app.component('SplitButton',SplitButton)
 app.component('ToastMessage', ToastMessage)
 app.component('InputText', InputText)
 app.component('Button', Button)

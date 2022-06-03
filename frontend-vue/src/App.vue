@@ -13,19 +13,18 @@ export default {
     return {
     }
   },
-  mounted() {
-  let userwayscript = document.createElement('script')
-  userwayscript.setAttribute('src', 'https://cdn.userway.org/widget.js')
-  userwayscript.setAttribute('data-account', 'idtDhWyQBz')
-  userwayscript.setAttribute('id', 'userway-widget-adding-by-vue')
-  document.head.appendChild(userwayscript)
+ mounted() {
+let userwayscript = document.createElement('script')
+userwayscript.setAttribute('src', 'https://cdn.userway.org/widget.js')
+userwayscript.setAttribute('data-account', 'idtDhWyQBz')
+userwayscript.setAttribute('id', 'userway-widget-adding-by-vue')
+document.head.appendChild(userwayscript)
 },
 beforeDestroy() {
-  // Remueve el widget de la aplicacion, antes que esta se destruya
-  let el = document.getElementById('userway-widget-adding-by-vue')
-  if (el) el.remove();
-  },
-
+// Remove UserWay Widget before destroying
+let el = document.getElementById('userway-widget-adding-by-vue')
+if (el) el.remove();
+},
   methods: {
     }
   }

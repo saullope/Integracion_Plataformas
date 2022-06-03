@@ -37,10 +37,7 @@ const items = [
     {
         separator: true
     },
-    {
-        label: "Cerrar Session",
-        icon: "pi pi-fw pi-sign-out"
-    }
+   
     ];
 
 export {items}
