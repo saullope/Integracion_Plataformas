@@ -1,6 +1,6 @@
 <template>
   <!-- seccion del header navbar -->
-<div class="card">
+<div class="card shadow-3">
   <div class="shadow-4 flex align-items-stretch card-container blue-container" style="min-height:70px; width:100%;">
     <div class="flex align-items-center justify-content-center" style="width:100px">
       <Image src="../img/logo.png" alt="" width="75"/>
@@ -19,9 +19,9 @@
     </div>
 </div>
 </div>
-<br><br>
+
   <!--   ............................  -->
-<div class="grid grid-nogutter surface-section text-800">
+<div class="grid grid-nogutter text-800">
     <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
         <section>
             <span class="block text-6xl font-bold mb-1">"Sistema Web de Integración de Plataformas de Evaluación."

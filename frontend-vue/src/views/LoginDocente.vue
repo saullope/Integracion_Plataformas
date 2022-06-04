@@ -32,7 +32,6 @@
 
         <Button @click="goToPrincipal" label="Iniciar Sesion" icon="pi pi-user" class="w-full" />
         <hr>
-        <Button label="Iniciar con Google" icon="pi pi-google" class="w-full p-button-danger"/>
 
     </div>
 

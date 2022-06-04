@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { items } from '../elementos/sidebar.js'
+//import { items } from '../elementos/sidebar.js'
 
 export default {
 
@@ -46,7 +46,7 @@ export default {
     data(){
         return {
             visibleLeft: false,
-            items,
+  //          items,
             account_options : [
                 {
                     label: "Informacion Personal",
