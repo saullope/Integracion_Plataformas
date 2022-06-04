@@ -1,12 +1,20 @@
 <template>
-    
-        <SideHeader></SideHeader>
-        <br><br><br><br><br>
-        <div class="shadow-3 card mb-4 surface-500">
-        
-            <div class="grid">
-                <div class="col-8 bg-blue-50 border-round">
-                    <div class="grid">
+    <div class="block-content">
+        <div style="height: 100vh; overflow: hidden;">
+            <div class="min-h-screen flex relative lg:static surface-ground">
+                <!-- cargando el sidebar -->
+                <Sidebar></Sidebar>
+                <!-- cierre del Sidebar -->
+
+                <!-- contenedor del header y el area de trabajo -->
+                <div class="min-h-screen flex flex-column relative flex-auto">
+                    <HeaderWorkspace></HeaderWorkspace>
+
+                    <!-- Inicio del cuerpo del area de trabajo -->
+                    <div class="p-3 flex flex-column flex-auto">
+                        <div class="border-2 border-solid surface-border border-round surface-section flex-auto">
+                            <!-- Aqui va todo el contenido del area de trabajo -->
+                                <div class="grid">
                         <!-- Area de visualizacion de plataformas disponibles -->
                         <div v-for="i in plataformas" :key="id" class="col-12 md:col-6 xl:col-4 p-3">
                             <div class="surface-card shadow-2 border-rounded p-4">
@@ -30,29 +38,28 @@
                                         </button>
                                        </div></div></div>
                         <!-- Fin de area de visualizacion -->
+                    </div>                   
+                            <!--------------------------------------------------->
+                        </div>
                     </div>
+                    <!-- Fin del area de trabajo -->
                 </div>
-
-                <!-- Area de visualizacion de informacion de una plataforma de evaluacion -->
-                <div class="col ml-2 bg-blue-50 border-round ">
-                    <div class="grid">
-                    
-                    </div>
-                </div>
+                <!-- fin del header y el area de trabajo-->
             </div>
-            
-        </div>
-    
+        </div>    
+    </div>    
 </template>
 
 <script>
-import SideHeader from '@/components/SideHeader.vue'
+import Sidebar from '@/components/Sidebar.vue'
+import HeaderWorkspace from '@/components/HeaderWorkspace.vue'
 
 export default {
     name: "PlataformasEvaluacion",
     props: [],
     components: {
-    SideHeader
+    Sidebar,
+    HeaderWorkspace
 },
     data(){
         return {
