@@ -8,7 +8,8 @@
          
                <span class="p-input-icon-left">
                         <i class="pi pi-search" />
-                        <InputText  placeholder="Buscar..." />
+
+                        <InputText v-model="filters['global'].value" placeholder="Buscar..." />
                  </span>
             
             </template>
@@ -19,6 +20,16 @@
         </Toolbar>
         <!-- cuerpo del data table -->
          
+      <Dialog :v-model:visible="deleteestudianteDialog" :style="{width: '450px'}" header="Confirmar"  :modal="true">
+                <div class="confirmation-content">
+                    <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
+                    <span v-if="product">¿ Desea eliminar este dato ? <b>{{data.nombre}}</b>?</span>
+                </div>
+                <template #footer>
+                    <Button label="No" icon="pi pi-times" class="p-button-text" @click="deleteestudianteDialog = false"/>
+                    <Button label="Si" icon="pi pi-check" class="p-button-text" @click="deleteDialog" />
+                </template>
+            </Dialog>
 
 <DataTable ref="dt" :value="estudiantes" sortMode="multiple" :paginator="true" :rows="5" :first="firstRecordIndex" :filters="filters"
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
@@ -34,18 +45,18 @@
     <Column field="correo" header="Correo" :sortable="true"></Column>
     <Column field="direccion.ciudad" header="Domicilio" :sortable="true"></Column>
      <Column header="Opciones" :exportable="false" style="min-width:8rem">
-                    <template #body="estudiantes">
-                        <Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editProduct(estudiantes)" />
-                        <Button icon="pi pi-trash" class="p-button-rounded p-button-warning" @click="confirmDeleteProduct(estudiantes)" />
-                    </template>
-                </Column>
+              <template #body="estudiantes">
+               <Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editProduct(estudiantes)" />
+               <Button icon="pi pi-trash" class="p-button-rounded p-button-warning" @click="deleteestudianteDialog(estudiantes)" />
+              </template>
+     </Column>
 
 </DataTable>
 
         <!-- fin del cuerpo del data table -->
     </div>
     <!-- modal para agregar estudiantes -->
-    <Dialog header="Agregar nuevo estudiante" v-model:visible="displayModal" :style="{width: '50vw'}" :modal="true">
+  <!--  <Dialog header="Agregar nuevo estudiante" v-model:visible="displayModal" :style="{width: '50vw'}" :modal="true">
             <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -53,10 +64,14 @@
                 <Button label="Cancelar" icon="pi pi-times" @click="closeModal" class="p-button-text"/>
                 <Button label="Guardar" icon="pi pi-check" @click="saveInfo" autofocus />
             </template>
-    </Dialog>
+    </Dialog> -->
+
+
+    
 </template>
 
 <script>
+import {FilterMatchMode} from 'primevue/api';
 import InformacionEstudiantes from '@/service/InformacionEstudiantes'
 
 export default {
@@ -67,12 +82,11 @@ export default {
         return {
             originaldata:[],
             displayModal: false,
+            filters: {},
             messages: [],
             columns:null,
             estudiantes:null,
-
-            dialog: false,
-      dialogDelete: false,
+            deleteestudianteDialog: false,
    
       headers: [
         {
@@ -95,7 +109,6 @@ export default {
         apellidos: "",
         grupo: "",
         correo: "",
-        protein: 0,
       },
       defaultItem: {
         name: '',
@@ -111,25 +124,11 @@ export default {
   
     created(){
         this.InformacionEstudiantes = new InformacionEstudiantes();
-        
-       /* this.columns = [
-            //el field es el elemento dentro del json, o sea, la variable
-            //el header es lo que se muestra en la pantalla
-    {field:"id", header:"ID"},
-    {field:"nombre", header:"Nombre"},
-    {field:"apellidos", header:"Apellidos"},
-    {field:"grupo", header:"Grupo"},
-    {field:"correo",header:"Correo"},
-    //aqui lleva un punto direccion, por que dentro de ella hay ciudad y nacionaliodad, y solo ocuparemos ciudad
-    {field:"direccion.ciudad",header:"Dirreccion"},
-    {field:"", header:"Opciones"}
-
-        ]*/
-
+        this.initFilters();
     },
 
     mounted(){
-        //como estaba nulo le asignamos el listado de estudiantes segun la api
+     
         this.InformacionEstudiantes.getStudents().then(data => this.estudiantes = data);
         this.originaldata = this.data;
         
@@ -156,23 +155,7 @@ export default {
             this.$toast.add({severity: 'success', summary: 'Agregado con Exito', detail: 'El estudiante ha sido agregado con exito.', life: 3000});
 
         },
-        searchtable(){
-            var event =  event.target.value;
-            var response = [];
-            if(event != ""){
-                for(data of this.data){
-                    for(value of object.values(data)){
-                        if(value.indexof(event>=0 )){
-                        response.push(data);
-                        }
-                    }
-                }
-                this.data = response;
-            } else{
-                this.data = this.originaldata; 
-            }
-
-        },
+        
     
         exportCSV(){
             this.$refs.dt.exportCSV();
@@ -192,6 +175,14 @@ export default {
             this.estudiante = {};
             this.$toast.add({severity:'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
         },
+        deleteestudianteDialog() {
+            this.deleteestudianteDialog = true;
+        },
+        initFilters() {
+            this.filters = {
+                'global': {value: null, matchMode: FilterMatchMode.CONTAINS},
+            }
+        }
     }
 }
 </script>
