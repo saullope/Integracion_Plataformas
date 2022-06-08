@@ -38,7 +38,9 @@
                                             <span class="p-ink"></span>
 
                                         </button>
-                                       </div></div></div>
+                                    </div>
+                                </div>
+                            </div>
                         <!-- Fin de area de visualizacion -->
                     </div>                   
                             <!--------------------------------------------------->

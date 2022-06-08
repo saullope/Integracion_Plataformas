@@ -21,5 +21,5 @@ export async function getConnection(){
 
    
 }
-/*  const result = await pool.request().query('SELECT * FROM Rol')
-    console.log(result); */
+
+export { sql }

@@ -1,0 +1,31 @@
+@api = "http://localhost:3000/educador"
+
+GET {{api}}
+
+###
+
+POST http://localhost:3000/educador
+Content-Type: application/json
+
+{
+    "name":"saul isaac",
+    "apellidos":"lopez rios"
+
+}
+
+###
+POST http://localhost:3000/session
+Content-Type: application/json
+
+{
+    "correo": "cberrios@stmary.edu.ni",
+    "contrasena": "HJS768"
+}
+
+###
+POST http://localhost:3000/educador
+Content-Type: application/json
+
+{
+    "correo": "cberrios@stmary.edu.ni"
+}

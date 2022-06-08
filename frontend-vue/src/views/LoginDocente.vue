@@ -6,7 +6,7 @@
 <div class="flex justify-content-center flex-wrap card-container">
     
     
-    <div class="col-6 ">
+    <div class="col-5 ">
          <div class="flex justify-content-cente card-container blue-container">
         <div class="surface-card p-5 shadow-4 border-round w-full lg:w-11">
     <div class="text-center mb-5">
@@ -17,11 +17,19 @@
     </div>
 
     <div>
-        <label for="email1" class="block text-900 font-medium mb-2"><strong>Email</strong></label>
-        <InputText id="email1" type="text" class="w-full mb-3" />
-
-        <label for="password1" class="block text-900 font-medium mb-2"><strong>Password</strong></label>
-        <InputText id="email1" type="password" class="w-full mb-3" />
+    <form @submit="onSubmit">
+        
+        <span class="p-float-label p-input-icon-left w-full mb-3">
+            <i class="pi pi-at" />
+            <InputText id="inputtext-email" type="email" class="w-full mb-3" v-model="correo"/>
+            <label for="inputtext-email">Email</label>
+        </span>
+<br>
+        <span class="p-float-label p-input-icon-left w-full mb-3 text-dark">
+            <i class="pi pi-key" />
+            <InputText id="inputtext-password" type="password" class="w-full mb-3" v-model="contrasena"/>
+            <label for="inputtext-right">Password</label>
+        </span>
         <div class="flex align-items-center justify-content-between mb-6">
             <div class="flex align-items-center">
                 <Checkbox id="rememberme1" :binary="true" v-model="checked" class="mr-2" />
@@ -30,8 +38,9 @@
             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">¿Olvido su Contraseña?</a>
         </div>
 
-        <Button @click="goToPrincipal" label="Iniciar Sesion" icon="pi pi-user" class="w-full" />
+        <Button type="submit" @click="goToPrincipal" label="Iniciar Sesion" icon="pi pi-user" class="w-full" />
         <hr>
+        </form>
 
     </div>
 
@@ -51,9 +60,15 @@
 export default {
     data(){
         return {
-            value1: null
+            value1: null,
+            correo: null,
+            contrasena: null
         }
     },
+    computed: {
+        
+    },
+
     methods: {
         goToPrincipal(){
             this.$router.push('/principal')
