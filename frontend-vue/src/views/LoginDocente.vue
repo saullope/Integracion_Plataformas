@@ -1,62 +1,89 @@
 <template>
 
-<div class="field" style="background-color:#CFDDF5;">
-<div height="20px"><br></div>
 
-<div class="flex justify-content-center flex-wrap card-container">
-    
-    
-    <div class="col-6 ">
-         <div class="flex justify-content-cente card-container blue-container">
-        <div class="surface-card p-5 shadow-4 border-round w-full lg:w-11">
-    <div class="text-center mb-5">
-        <Image src="../img/logo.png" alt="logo del colegio" height="75" class="mb-3" />
-        <div class="text-900 text-3xl font-medium mb-3">Bienvenido Educador</div>
-        <span class="text-600 font-medium line-height-3"></span>
-        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"></a>
-    </div>
-
-    <div>
-        <label for="email1" class="block text-900 font-medium mb-2"><strong>Email</strong></label>
-        <InputText id="email1" type="text" class="w-full mb-3" />
-
-        <label for="password1" class="block text-900 font-medium mb-2"><strong>Password</strong></label>
-        <InputText id="email1" type="password" class="w-full mb-3" />
-        <div class="flex align-items-center justify-content-between mb-6">
-            <div class="flex align-items-center">
-                <Checkbox id="rememberme1" :binary="true" v-model="checked" class="mr-2" />
-                <label for="rememberme1"></label>
+<div class="block-content ">
+    <div class="bg-blue-100 px-4 py-8 md:px-6 lg:px-8">
+        <div class="flex flex-wrap shadow-2">
+            <div class="w-full lg:w-6 px-0 py-4 lg:p-6 bg-blue-50">
+                <Image src="../img/logo.png" alt="Image" height="75" class="mb-6 ml-3 lg:ml-0" />
             </div>
-            <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">¿Olvido su Contraseña?</a>
+            <div class="w-full lg:w-6 p-4 lg:p-7 surface-card">
+                <div class="flex align-items-center justify-content-between mb-7">
+                    <span class="text-2xl font-medium text-900">Bienvenido Educador</span>
+                </div>
+               
+            <div v-show="errorlogueo">
+                <Message severity="error" :closable="true" >Los datos ingresados no son validos.</Message>
+            </div>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">
+                        <i class="pi pi-user"></i>
+                    </span>
+                    <InputText v-model="ingreso.correo" type="email" placeholder="Correo" />
+                </div>        
+    <br><br>
+            <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">
+                        <i class="pi pi-key"></i>
+                    </span>
+                    <InputText v-model="ingreso.contrasena" type="password" placeholder="Password" />
+                </div>
+            <div class="flex align-items-center justify-content-between mb-6">
+                <br>
+            </div>
+            
+            <Button class="p-button p-component w-full font-medium" label="Iniciar Session" icon="pi pi-user" @click="session"/>
+            
         </div>
-
-        <Button @click="goToPrincipal" label="Iniciar Sesion" icon="pi pi-user" class="w-full" />
-        <hr>
-
-    </div>
-
-
-        </div>
-    </div>
+        
     </div>
 </div>
-    
-    <div height="20"><br></div>
-</div>    
+</div>
 
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
     data(){
         return {
-            value1: null
+            value1: null,
+            ingreso : {
+                correo: null,
+                contrasena: null
+            },
+            respuesta: [],
+            errorlogueo: false
+            
         }
     },
+    mounted(){
+        setTimeout(() => {console.log("despues de los 5 segundos")}, 5000)
+    },
+    computed(){
+
+    },
+
     methods: {
-        goToPrincipal(){
-            this.$router.push('/principal')
+        hidenError(){
+            this.errorlogueo = false
+        },
+        showError(){
+            this.errorlogueo = true
+            setTimeout(this.hidenError, 5000)
+        },
+        session(){
+            this.hidenError()            
+            axios.post("http://localhost:3000/session", this.ingreso)
+            .then(response => { this.respuesta = response.data })
+
+            if (this.respuesta.length > 0){
+                
+                this.$router.push('/principal')
+            }else {
+                this.showError()
+            }
         }
     }
 }

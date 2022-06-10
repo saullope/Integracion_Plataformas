@@ -135,6 +135,7 @@ export default {
 				{label: 'Masaya', value: 'Masaya'},
                 {label: 'Granada', value: 'Granada'},
             ],
+
       
   
         }

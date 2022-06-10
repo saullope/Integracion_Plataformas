@@ -31,12 +31,16 @@
                                     <div class="flex justify-content-between pt-4">
                                         <button class="p-button p-component p-button-primary w-full mr-2" 
                                                 type="button"
+                                                @click="modalEvaluation = true"
                                                 ><!---->
                                             <span class="pi pi-pencil p-button-icon p-button-icon-left"></span>
                                             <span class="p-button-label">{{i.crear}}</span><!---->
                                             <span class="p-ink"></span>
+
                                         </button>
-                                       </div></div></div>
+                                    </div>
+                                </div>
+                            </div>
                         <!-- Fin de area de visualizacion -->
                     </div>                   
                             <!--------------------------------------------------->
@@ -47,7 +51,16 @@
                 <!-- fin del header y el area de trabajo-->
             </div>
         </div>    
-    </div>    
+    </div> 
+
+    <!-- Modal para plataformas de evaluacion -->
+    <Dialog header="Crea una Evaluacion" v-model:visible="modalEvaluation">
+    
+    <template #footer>
+    <Button label="Crear Evaluacion" @click="modalEvaluation = false"/>
+    </template>
+    </Dialog>
+    <!-- ------------------------------------ -->   
 </template>
 
 <script>
@@ -63,6 +76,7 @@ export default {
 },
     data(){
         return {
+            modalEvaluation: false,
             plataformas : [
                 {
                     id: 1,
@@ -83,8 +97,11 @@ export default {
     },
 
     methods: {
-        prueba: () => {
+        prueba(){
             // se manda la informacion al otro componente
+        },
+        createEvaluation(){
+            this.modalEvaluation = false;
         }
     }
 }

@@ -38,12 +38,15 @@ import SplitButton from 'primevue/splitbutton'
 import ConfirmationService from 'primevue/confirmationservice'
 import ConfirmDialog from 'primevue/confirmdialog'
 import Card from 'primevue/card'
+import Message from 'primevue/message'
+import axios from 'axios'
 
 const app = createApp(App).use(store).use(router)
 
 app.use(PrimeVue, {ripple: true})
 app.use(ToastService)
-app.use(ConfirmationService);
+app.use(ConfirmationService)
+app.component('Message', Message)
 app.component('Card',Card)
 app.component('ConfirmDialog',ConfirmDialog)
 app.component('SplitButton',SplitButton)
