@@ -6,7 +6,7 @@ export const getEducator = async (req, res) => {
     const result = await pool.request()
     .query("SELECT * FROM Docente");
 
-    res.json({ correo })
+    res.json(result.recordset)
 }; 
 
 export const getEmailEducator = async (req, res) => {

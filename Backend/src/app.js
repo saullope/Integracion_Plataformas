@@ -5,7 +5,7 @@ import cors from 'cors'
 import docenteRoutes from './routes/docente.routes'
 
 const app = express();
-
+ 
 //configuraciones del puerto
 app.set('port', config.port);
 
