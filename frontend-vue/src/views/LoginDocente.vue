@@ -4,8 +4,13 @@
 <div class="block-content ">
     <div class="bg-blue-100 px-4 py-8 md:px-6 lg:px-8">
         <div class="flex flex-wrap shadow-2">
-            <div class="w-full lg:w-6 px-0 py-4 lg:p-6 bg-blue-50">
-                <Image src="../img/logo.png" alt="Image" height="75" class="mb-6 ml-3 lg:ml-0" />
+            <div class="w-full lg:w-6 px-0 py-4 lg:p-6 surface-ground">
+                <Image src="../img/fondo_login.jpeg" alt="Image" class="mb-6 ml-3 lg:ml-0" />
+                 <div class="mb-3 font-bold text-2xl">
+        <span class="text-900">Texto texto, </span>
+        <span class="text-blue-600">mas texto</span>
+    </div>
+    <div class="text-700 text-sm mb-6">Texto interesante en el login del docente.</div>
             </div>
             <div class="w-full lg:w-6 p-4 lg:p-7 surface-card">
                 <div class="flex align-items-center justify-content-between mb-7">

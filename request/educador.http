@@ -29,3 +29,11 @@ Content-Type: application/json
 {
     "correo": "cberrios@stmary.edu.ni"
 }
+
+###
+POST http://localhost:3000/estudianteEducador
+Content-Type: application/json
+
+{
+    "idDocente" :8
+}
