@@ -7,6 +7,8 @@ import PlataformasEvaluacion from '../views/PlataformasEvaluacion.vue'
 import EvaluacionesDatos from '../views/EvaluacionesDatos.vue'
 import RegistroGrupos from '../views/RegistroGrupos.vue'
 import RegistroEstudiantes from '../views/RegistroEstudiantes.vue'
+import EmbedJotform from '../views/EmbedJotform.vue'
+import EmbedKahoot from '../views/EmbedKahoot.vue'
 
 const routes = [
   {
@@ -48,6 +50,16 @@ const routes = [
     path: "/registro-students",
     name: "registro-students",
     component: RegistroEstudiantes
+  },
+  {
+    path: "/jotform",
+    name: "jotform",
+    component: EmbedJotform
+  },
+  {
+    path: "/kahoot",
+    name: "kahoot",
+    component: EmbedKahoot
   }
   /** 
    * 

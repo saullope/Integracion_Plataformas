@@ -31,7 +31,7 @@
                                     <div class="flex justify-content-between pt-4">
                                         <button class="p-button p-component p-button-primary w-full mr-2" 
                                                 type="button"
-                                                @click="modalEvaluation = true"
+                                                @click="i.command"
                                                 ><!---->
                                             <span class="pi pi-pencil p-button-icon p-button-icon-left"></span>
                                             <span class="p-button-label">{{i.crear}}</span><!---->
@@ -80,17 +80,23 @@ export default {
             plataformas : [
                 {
                     id: 1,
-                    title: "Google Forms",
+                    title: "JotForm",
                     crear: "Crear formulario",
                     Description: "lorejshsjssjshhmhyndghdjksjsjshsjsjsgsjssksg",
-                    src: "../img/forms_miniatura.png"
+                    src: "../img/jotform_miniatura.png",
+                    command: () => {
+                        this.$router.push('/jotform')
+                    }
                 },
                 {
                     id: 2,
                     title: "Kahoot!",
                     crear: "Crear Kahoot",
                     Description: "lorejshsjssjshhmhyndghdjksjsjshsjsjsgsjssksg",
-                    src: "../img/kahoot_miniatura.png"
+                    src: "../img/kahoot_miniatura.png",
+                    command: () => {
+                        this.$router.push('/kahoot')
+                    }
                 }
             ]
         }

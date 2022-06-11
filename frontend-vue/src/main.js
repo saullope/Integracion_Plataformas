@@ -39,7 +39,7 @@ import ConfirmationService from 'primevue/confirmationservice'
 import ConfirmDialog from 'primevue/confirmdialog'
 import Card from 'primevue/card'
 import Message from 'primevue/message'
-import axios from 'axios'
+import Breadcrumb from 'primevue/breadcrumb'
 
 const app = createApp(App).use(store).use(router)
 
@@ -75,4 +75,5 @@ app.component('Toolbar', Toolbar)
 app.component('Dialog', Dialog)
 app.component('FileUpload', FileUpload)
 app.component('Rating', Rating)
+app.component('Breadcrumb', Breadcrumb)
 app.mount('#app')
