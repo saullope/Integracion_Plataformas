@@ -36,6 +36,8 @@ export const getEmailEducator = async (req, res) => {
 
 };
 
+
+
 /** 
 export const createNewEducator = async (req, res) => {
     

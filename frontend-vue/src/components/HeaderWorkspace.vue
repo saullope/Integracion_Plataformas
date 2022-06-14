@@ -6,9 +6,10 @@
                 <i class="pi pi-bars text-4xl"></i>
                 <span class="p-ink"></span>
             </a>
-            <span class="p-input-icon-left">
+            <!--<span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input class="p-inputtext p-component border-none w-10rem sm:w-20rem border-none w-10rem sm:w-20rem" type="text" placeholder="Search"></span>
+            -->
             </div>
                 <a class="cursor-pointer block lg:hidden text-700 p-ripple">
                     <i class="pi pi-ellipsis-v text-2xl"></i>
@@ -16,7 +17,7 @@
                 </a>
                 <div class="flex justify-content-end flex-wrap card-container green-container">
             <div class="flex align-items-center justify-content-center font-bold text-white border-round m-2 mr-5">
-                <SplitButton icon="pi pi-user" class="p-button-rounded p-button-outlined p-button-primary" :model="account_options"></SplitButton>>
+                <SplitButton icon="pi pi-user" class="p-button-rounded p-button-primary" :model="account_options"></SplitButton>>
             </div>
         </div>
             </div>

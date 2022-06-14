@@ -54,26 +54,29 @@ const routes = [
   {
     path: "/jotform",
     name: "jotform",
-    component: EmbedJotform
+    component: EmbedJotform,
+    children : [
+      {
+        path: '',
+        component: () => import('@/components/menu/AsignarDemo.vue')
+      },
+      {
+        path : '/jotform/credential',
+        component: () => import('@/components/menu/CredencialDemo.vue')
+      },
+      {
+        path: '/jotform/workspace',
+        component: () => import('@/components/menu/AreaDemo.vue')
+      }
+    ]
   },
   {
     path: "/kahoot",
     name: "kahoot",
     component: EmbedKahoot
-  }
-  /** 
-   * 
-   *
-  *{
-*
- *   path: '/about',
- *   name: 'about',
- *   // route level code-splitting
- *   // this generates a separate chunk (about.[hash].js) for this route
- *   // which is lazy-loaded when the route is visited.
- *   component: () => import(webpackChunkName: "about"  '../views/AboutView.vue')
- * } 
-  */
+  },
+                
+  
 ]
 
 const router = createRouter({

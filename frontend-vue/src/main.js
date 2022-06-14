@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, VueElement } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -40,14 +40,21 @@ import ConfirmDialog from 'primevue/confirmdialog'
 import Card from 'primevue/card'
 import Message from 'primevue/message'
 import Breadcrumb from 'primevue/breadcrumb'
+import Steps from 'primevue/steps'
+import MultiSelect from 'primevue/multiselect'
 
-const app = createApp(App).use(store).use(router)
+const app = createApp(App)
+    .use(store)
+    .use(router)
 
+app.config.globalProperties.variableGlobal = 0
 app.use(PrimeVue, {ripple: true})
 app.use(ToastService)
 app.use(ConfirmationService)
+app.component('MultiSelect', MultiSelect)
 app.component('Message', Message)
 app.component('Card',Card)
+app.component('Steps', Steps)
 app.component('ConfirmDialog',ConfirmDialog)
 app.component('SplitButton',SplitButton)
 app.component('ToastMessage', ToastMessage)
@@ -76,4 +83,5 @@ app.component('Dialog', Dialog)
 app.component('FileUpload', FileUpload)
 app.component('Rating', Rating)
 app.component('Breadcrumb', Breadcrumb)
+
 app.mount('#app')

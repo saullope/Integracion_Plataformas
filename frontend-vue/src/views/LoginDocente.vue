@@ -2,24 +2,26 @@
 
 
 <div class="block-content ">
-    <div class="bg-blue-100 px-4 py-8 md:px-6 lg:px-8">
+    <div class="px-4 py-8 md:px-6 lg:px-8 f-blue">
         <div class="flex flex-wrap shadow-2">
             <div class="w-full lg:w-6 px-0 py-4 lg:p-6 surface-ground">
                 <Image src="../img/fondo_login.jpeg" alt="Image" class="mb-6 ml-3 lg:ml-0" />
-                 <div class="mb-3 font-bold text-2xl">
-        <span class="text-900">Texto texto, </span>
-        <span class="text-blue-600">mas texto</span>
+                 <div class="mb-3 font-bold text-xl">
+        <span class="text-900">Accede a tu Espacio de Trabajo</span><br>
     </div>
-    <div class="text-700 text-sm mb-6">Texto interesante en el login del docente.</div>
+    <div class=" text-1xl">
+        <span class="text-blue-600">¡Aquí encontraras las herramientas necesarias para crear evaluaciones dinámicas!</span>
+    </div>
             </div>
             <div class="w-full lg:w-6 p-4 lg:p-7 surface-card">
                 <div class="flex align-items-center justify-content-between mb-7">
-                    <span class="text-2xl font-medium text-900">Bienvenido Educador</span>
+                    <span class="text-2xl font-medium text-900">¡Bienvenido Educador!</span>
                 </div>
                
             <div v-show="errorlogueo">
                 <Message severity="error" :closable="true" >Los datos ingresados no son validos.</Message>
             </div>
+
                 <div class="p-inputgroup">
                     <span class="p-inputgroup-addon">
                         <i class="pi pi-user"></i>
@@ -31,13 +33,13 @@
                     <span class="p-inputgroup-addon">
                         <i class="pi pi-key"></i>
                     </span>
-                    <InputText v-model="ingreso.contrasena" type="password" placeholder="Password" />
+                    <InputText v-model="ingreso.contrasena" type="password" placeholder="Password"  />
                 </div>
             <div class="flex align-items-center justify-content-between mb-6">
                 <br>
             </div>
             
-            <Button class="p-button p-component w-full font-medium" label="Iniciar Session" icon="pi pi-user" @click="session"/>
+            <Button type="submit" class="p-button p-component w-full font-medium" label="Iniciar Session" icon="pi pi-user" @click="session"/>
             
         </div>
         
@@ -59,8 +61,8 @@ export default {
                 contrasena: null
             },
             respuesta: [],
-            errorlogueo: false
-            
+            errorlogueo: false,
+
         }
     },
     mounted(){
@@ -81,10 +83,11 @@ export default {
         session(){
             this.hidenError()            
             axios.post("http://localhost:3000/session", this.ingreso)
-            .then(response => { this.respuesta = response.data })
-
+            .then(response => { this.respuesta = response.data });
+            
             if (this.respuesta.length > 0){
                 
+                console.log(this.respuesta)
                 this.$router.push('/principal')
             }else {
                 this.showError()

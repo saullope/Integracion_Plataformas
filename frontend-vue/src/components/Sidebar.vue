@@ -3,7 +3,8 @@
         <div class="flex flex-column h-full">
             <!-- inicio del sidebar con el logo -->
             <div class="flex align-items-center justify-content-center flex-shrink-0" style="height: 60px;">
-                <img src="" alt="imagen">
+                <!---->
+                <Image src="../img/eduion.png" />
             </div>
                 <div class="mt-3">
                     <ul class="list-none p-0 m-0">

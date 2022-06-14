@@ -36,7 +36,6 @@
                                             <span class="pi pi-pencil p-button-icon p-button-icon-left"></span>
                                             <span class="p-button-label">{{i.crear}}</span><!---->
                                             <span class="p-ink"></span>
-
                                         </button>
                                     </div>
                                 </div>

@@ -1,5 +1,5 @@
 <template>
-<div class="p-4 md:p-4 lg:p-6 bg-blue-100">
+<div class="p-4 md:p-4 lg:p-6 f-blue">
     <div class="flex justify-content-center flex-wrap ">
         <div class="shadow-3 border-round surface-card" style="min-height: 20rem; min-width:60rem">
             <div class="p-3">
@@ -11,9 +11,9 @@
             </div>
             <div class="col-12">
                 <div class="flex justify-content-center flex-wrap mt-0">
-                    <h2>Elige tu rol...</h2>
+                    <h2>Elige tu rol ...</h2><br>
                 </div>
-                <span>Te llevaremos al lugar indicado.</span>
+                    <span class="text-lg">Te llevaremos al lugar indicado.</span>
             </div>
         </div>
         <div class="grid">

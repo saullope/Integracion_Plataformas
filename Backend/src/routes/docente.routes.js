@@ -10,7 +10,6 @@ const router = Router();
 
 router.get('/educador', getEducator);
 router.post('/educador', getEmailEducator)
-//router.post('/educador', createNewEducator)
 router.post('/session', sessionEducator)
 router.post('/estudianteEducador', getStudentTeacher);
 

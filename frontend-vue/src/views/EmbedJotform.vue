@@ -11,38 +11,33 @@
                     <div class="p-3 flex flex-column flex-auto">
                         <div class="border-2 border-solid surface-border border-round surface-section flex-auto">
                     <!-- Aqui va todo el contenido del area de trabajo -->
-                            <div class="flex justify-content-start flex-wrap card-container blue-container">
-                                <div class="flex align-items-center justify-content-center p-3">
-                                    <Breadcrumb :home="home" :model="items" />
-                                </div>
-                            </div>
+                            
                             <div class="grid">
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="card p-2">
                                         <div class="flex justify-content-start flex-wrap card-container blue-container p-2">
                                             <div>
-                                            <h2>Crea formularios dinamicos</h2>
-                                            <span>Aqui va la informacion de los grupos al que se le aplica la evaluacion</span>
+                                            <h2>Crea formularios dinámicos con <span class="text-blue-600 text-xl">JotForm</span></h2>
                                             </div>
                                         </div>
-                                        <div class="flex justify-content-start flex-wrap">
-                                                <div class="flex align-items-center justify-content-center p-3">
-                                                    <Button @click="cambiarDespues" label="Validar Credenciales" class="p-button-success" />
-                                                </div>
-                                                <div class="flex align-items-center justify-content-center p-3">
-                                                    <InputText type="text" v-model="credencial" :disabled="habilitarKey">{{credencial}}</InputText>
-                                                </div>
-                                                <div class="flex align-items-center justify-content-center p-3">
-                                                    <Button @click="addForm" label="Crear Formulario" :disabled="habilitar"/>
-                                                </div>
-                                            </div>
-
                                     </div>
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <Steps :model="item" :readonly="false" />
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div class="col-6">
-                                    6
+                                <div class="col-12">
+                                    <router-view v-slot="{Component}" :formData="formObject" @prevPage="prevPage($event)" @nextPage="nextPage($event)" @complete="complete">
+                                        <keep-alive>
+                                            <component :is="Component" />
+                                        </keep-alive>
+                                    </router-view>
                                 </div>
+                                
                             </div>
+
                                                                           
                     <!-- Fin del area de trabajo -->
                 </div>
@@ -61,12 +56,27 @@ export default {
     components: { HeaderWorkspace },
     data() {
         return {
-            home: { icon: 'pi pi-home', to: '/principal' },
-            items: [ {label: 'JotForm Workspace'} ],
             habilitar: true,
             API_KEY: '5fd72b0f34e0a9e0f3ee831095f1cd0a',
             credencial: null,
-            habilitarKey: false
+            habilitarKey: false,
+            generateUrl: null,
+          
+            item: [{
+                label: 'Asignar',
+                to: '/jotform/'
+            },
+            {
+                label: 'Validar Usuario',
+                to: '/jotform/credential'
+            },
+            {
+                label: 'Area de Creacion',
+                to: '/jotform/workspace'
+            }],
+            
+            formObject: {}
+
 
         }
     },
@@ -79,12 +89,30 @@ export default {
     },
     methods: {
         addForm() {
-            JotformAnywhere.launchFormBuilder({});
+            JotformAnywhere.launchFormBuilder({
+                insertTo: "#formHere",
+                putEditButton: true,
+                putDeleteButton: true
+            });
         },
         cambiarDespues(){
             this.credencial = this.API_KEY
-            this.habilitarKey = true,
+            this.habilitarKey = true
             this.habilitar = false
+           // const generateUrl = formID => `https://api.jotform.com/form/${formID}?apiKey=${config.apiKey || localStorage.getItem('JF-apiKey')}`;
+        },
+        nextPage(event) {
+            for (let field in event.formData) {
+                this.formObject[field] = event.formData[field];
+            }
+
+            this.$router.push(this.items[event.pageIndex + 1].to);
+        },
+        prevPage(event) {
+            this.$router.push(this.items[event.pageIndex - 1].to);
+        },
+        complete() {
+            this.$toast.add({severity:'success', summary:'Order submitted', detail: 'Dear, ' + this.formObject.firstname + ' ' + this.formObject.lastname + ' your order completed.'});
         }
     },
 
