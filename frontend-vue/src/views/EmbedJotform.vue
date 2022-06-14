@@ -23,22 +23,20 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="card">
-                                            <Steps :model="item" :readonly="false" />
+                                            <Steps :model="item" :readonly="true" />
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="col-12">
-                                    <router-view v-slot="{Component}" :formData="formObject" @prevPage="prevPage($event)" @nextPage="nextPage($event)" @complete="complete">
+                                    <router-view v-slot="{Component}" >
                                         <keep-alive>
                                             <component :is="Component" />
                                         </keep-alive>
                                     </router-view>
                                 </div>
                                 
-                            </div>
-
-                                                                          
+                            </div>                                                                          
                     <!-- Fin del area de trabajo -->
                 </div>
                 <!-- fin del header y el area de trabajo-->
@@ -56,9 +54,6 @@ export default {
     components: { HeaderWorkspace },
     data() {
         return {
-            habilitar: true,
-            API_KEY: '5fd72b0f34e0a9e0f3ee831095f1cd0a',
-            credencial: null,
             habilitarKey: false,
             generateUrl: null,
           
@@ -75,7 +70,7 @@ export default {
                 to: '/jotform/workspace'
             }],
             
-            formObject: {}
+            
 
 
         }
@@ -101,19 +96,9 @@ export default {
             this.habilitar = false
            // const generateUrl = formID => `https://api.jotform.com/form/${formID}?apiKey=${config.apiKey || localStorage.getItem('JF-apiKey')}`;
         },
-        nextPage(event) {
-            for (let field in event.formData) {
-                this.formObject[field] = event.formData[field];
-            }
 
-            this.$router.push(this.items[event.pageIndex + 1].to);
-        },
-        prevPage(event) {
-            this.$router.push(this.items[event.pageIndex - 1].to);
-        },
-        complete() {
-            this.$toast.add({severity:'success', summary:'Order submitted', detail: 'Dear, ' + this.formObject.firstname + ' ' + this.formObject.lastname + ' your order completed.'});
-        }
+        
+        
     },
 
 }

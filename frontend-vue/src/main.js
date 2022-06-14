@@ -47,7 +47,6 @@ const app = createApp(App)
     .use(store)
     .use(router)
 
-app.config.globalProperties.variableGlobal = 0
 app.use(PrimeVue, {ripple: true})
 app.use(ToastService)
 app.use(ConfirmationService)

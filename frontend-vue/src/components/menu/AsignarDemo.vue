@@ -10,7 +10,7 @@
                 <span class="p-inputgroup-addon">
                     <i class="pi pi-pencil"></i>
                 </span>
-                <InputText placeholder="Titulo de la Evaluacion" />
+                <InputText class="p-invalid" v-model="tituloEvaluacion" placeholder="Titulo de la Evaluacion" />
             </div>
         </div>
         <div class="col-12 md:col-3">
@@ -32,10 +32,18 @@
                 <span class="p-inputgroup-addon">
                     <i class="pi pi-calendar"></i>
                 </span>
-                <Calendar id="multiple" v-model="dates1" selectionMode="multiple" :manualInput="false" />
+                <Calendar id="multiple" v-model="dates1" :show-time="true" :show-seconds="true" selectionMode="multiple" :manualInput="false" />
             </div>
         </div>
     </div>
+<div class="card">
+    <div class="flex justify-content-center flex-wrap card-container blue-container">
+        <div class="flex align-items-center justify-content-center">
+            <Button @click="next" label="Siguiente" icon="pi pi-chevron-right" icon-pos="right"/>
+        </div>
+      
+    </div>
+</div>
 </div>
 </template>      
 
@@ -45,7 +53,7 @@ export default {
 
     data(){
         return {
-            nombre: '',
+            tituloEvaluacion: null,
             submited : false,
             selectedItems : null,
             validateErrors: {},
@@ -53,34 +61,22 @@ export default {
             items : [
                 {label: '1er A', value: '1er A'},
                 {label: '1er B', value: '1er B'},
-                {label: '2do A', value: '2do A'},
-                {label: '2do B', value: '2do B'},
-                {label: '1er B', value: '1er B'},
-                {label: '1er B', value: '1er B'}
+                {label: '2do A', value: '2do A'}
                 ]
         }
     },
     mounted() {},
     computed() {
+
+
     },
     methods: {
-        nextPage(){
-            this.submited = true;
-            this.$emit({formData: {nombre: this.nombre}, pageIndex: 0});
 
-        },
-        validateForm(){
-            !this,nombre.trim() ? this.validateErrors['nombre'] = true : delete this.validateErrors['nombre']
-        },
-         onSelectAllChange(event) {
-            this.selectedItems = event.checked ? this.items.map((item) => item.value) : [];
-            this.selectAll = event.checked;
-        },
-        onChange(event) {
-            this.selectAll = event.value.length === this.items.length
+        next(){
+            console.log(this.tituloEvaluacion+ " - " +this.selectedItems+" - "+this.dates1);
+            this.$router.push('/jotform/credential');
         }
-        
-    },
+             },
 
 }
 </script>
