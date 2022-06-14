@@ -37,3 +37,7 @@ Content-Type: application/json
 {
     "idDocente" :8
 }
+
+###
+GET http://localhost:3000/estudiantes
+Content-Type: application/json

@@ -1,0 +1,604 @@
+{
+    "data":[
+      {
+        "idEstudiante": 1,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "D4H 6O6",
+        "nombre": "Baker",
+        "apellidos": "Rivera",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 2,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "E5L 8N8",
+        "nombre": "Lewis",
+        "apellidos": "Mcdowell",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 3,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "V2Q 0R7",
+        "nombre": "Amelia",
+        "apellidos": "Sampson",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 4,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "X0F 6K4",
+        "nombre": "Isabella",
+        "apellidos": "Ortiz",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 5,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "G8J 5N2",
+        "nombre": "Chelsea",
+        "apellidos": "Bowers",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 6,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "H1Y 0R2",
+        "nombre": "Tallulah",
+        "apellidos": "Thompson",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": false
+      },
+      {
+        "idEstudiante": 7,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "S8R 3T3",
+        "nombre": "Mercedes",
+        "apellidos": "Fuller",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": false
+      },
+      {
+        "idEstudiante": 8,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "B7Q 6E7",
+        "nombre": "Brynne",
+        "apellidos": "Robles",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 9,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "U1K 8R3",
+        "nombre": "Zeph",
+        "apellidos": "Fischer",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": false
+      },
+      {
+        "idEstudiante": 10,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "Q2K 3W5",
+        "nombre": "Cody",
+        "apellidos": "French",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 11,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "M4W 3O4",
+        "nombre": "Kaitlin",
+        "apellidos": "Craft",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 12,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "W4E 1G5",
+        "nombre": "Melyssa",
+        "apellidos": "Mcbride",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 13,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "A1O 0R7",
+        "nombre": "Chantale",
+        "apellidos": "Kelley",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 14,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "Q4Q 4D4",
+        "nombre": "Chaney",
+        "apellidos": "Barlow",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 15,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "I7L 4T0",
+        "nombre": "Amal",
+        "apellidos": "Mercado",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": false
+      },
+      {
+        "idEstudiante": 16,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "N0Y 2B8",
+        "nombre": "Bradley",
+        "apellidos": "Gibson",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 17,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "C4J 4V8",
+        "nombre": "Amelia",
+        "apellidos": "Gould",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 18,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "Q3A 1C5",
+        "nombre": "Ina",
+        "apellidos": "Schultz",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 19,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "M4N 4X6",
+        "nombre": "Joel",
+        "apellidos": "Meyers",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 20,
+        "NombreGrupo": "4to A",
+        "carnetEstudiante": "W1F 5Z8",
+        "nombre": "Dante",
+        "apellidos": "Wise",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 21,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "C2V 7S1",
+        "nombre": "Elton",
+        "apellidos": "Meyer",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 22,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "W4X 9Q4",
+        "nombre": "Brenda",
+        "apellidos": "Rivera",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 23,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "V5G 8X3",
+        "nombre": "Serina",
+        "apellidos": "James",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 24,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "O1G 3V2",
+        "nombre": "Robert",
+        "apellidos": "Hurst",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 25,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "K3N 3W7",
+        "nombre": "Donovan",
+        "apellidos": "Huff",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 26,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "25B 1U1",
+        "nombre": "Alexander ",
+        "apellidos": "Mendez",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 27,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "21M 6H2",
+        "nombre": "Bianca",
+        "apellidos": "Hurst",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Ticuantepe",
+        "activo": true
+      },
+      {
+        "idEstudiante": 28,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "20D 2U3",
+        "nombre": "Devin",
+        "apellidos": "Kasimir",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 29,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "23S 2B1",
+        "nombre": "Isaac",
+        "apellidos": "Plato",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Ticuantepe",
+        "activo": true
+      },
+      {
+        "idEstudiante": 30,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "26M 4D4",
+        "nombre": "Kirk",
+        "apellidos": "Pascale",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Ticuantepe",
+        "activo": true
+      },
+      {
+        "idEstudiante": 31,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "27R 0D5",
+        "nombre": "Garrett",
+        "apellidos": "Walker",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 32,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "22H 5F1",
+        "nombre": "Angela",
+        "apellidos": "Chavez",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 33,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "22H 7L5",
+        "nombre": "Neil",
+        "apellidos": "Rowland",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 34,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "21Y 7V7",
+        "nombre": "Wyatt",
+        "apellidos": "Campbell",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 35,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "28E 3B5",
+        "nombre": "Oscar",
+        "apellidos": "Griffin",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 36,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "20U 0X4",
+        "nombre": "Nigel",
+        "apellidos": "Hebert",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 37,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "26C 3D2",
+        "nombre": "Abraham",
+        "apellidos": "Petersen",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      },
+      {
+        "idEstudiante": 38,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "25I 2P2",
+        "nombre": "Nathaniel",
+        "apellidos": "Craft",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 39,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "29N 2A7",
+        "nombre": "Perry",
+        "apellidos": "Darius",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 40,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "21W 9Z5",
+        "nombre": "Melvin",
+        "apellidos": "Ferrell",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 41,
+        "NombreGrupo": "3ro B",
+        "carnetEstudiante": "26M 5A2",
+        "nombre": "Jordan",
+        "apellidos": "Hale",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 42,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "39L 7V4",
+        "nombre": "Kirestin",
+        "apellidos": "Barber",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 43,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "33F 1F9",
+        "nombre": "Adrian",
+        "apellidos": "Norton",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 44,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "34V 7M3",
+        "nombre": "Audrey",
+        "apellidos": "Cain",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 45,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "33O 1Z1",
+        "nombre": "Kelly",
+        "apellidos": "Salazar",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 46,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "32X 7B5",
+        "nombre": "Tobias",
+        "apellidos": "Boris",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 47,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "31O 8B1",
+        "nombre": "Zelda",
+        "apellidos": "Benton",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 48,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "34P 7P4",
+        "nombre": "Yardley",
+        "apellidos": "Griffin",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 49,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "38B 8O6",
+        "nombre": "Kevin",
+        "apellidos": "Avery",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 50,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "34Q 1Q9",
+        "nombre": "Jonah",
+        "apellidos": "Rodgers",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 51,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "39Y 1C3",
+        "nombre": "Hilel",
+        "apellidos": "Clarke",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 52,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "37E 6W6",
+        "nombre": "Veronica",
+        "apellidos": "Valentine",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Managua",
+        "activo": true
+      },
+      {
+        "idEstudiante": 53,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "30R 1O5",
+        "nombre": "Brennan",
+        "apellidos": "Carey",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 54,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "33G 8K1",
+        "nombre": "Orlando",
+        "apellidos": "Walter",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 55,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "36B 5Y8",
+        "nombre": "Dolan",
+        "apellidos": "Hoffman",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 56,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "38F 2A8",
+        "nombre": "Evan",
+        "apellidos": "Guerrero",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 57,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "33J 8P5",
+        "nombre": "Marah",
+        "apellidos": "Beasley",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 58,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "36U 0F7",
+        "nombre": "Eleanor",
+        "apellidos": "Jensen",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 59,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "30T 9L4",
+        "nombre": "Harlan",
+        "apellidos": "Reilly",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Masaya",
+        "activo": true
+      },
+      {
+        "idEstudiante": 60,
+        "NombreGrupo": "3ro A",
+        "carnetEstudiante": "36U 6G9",
+        "nombre": "John",
+        "apellidos": "connor",
+        "nacionalidad": "Nicaraguense",
+        "ciudadDepartamento": "Granada",
+        "activo": true
+      }
+    ]
+}

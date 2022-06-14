@@ -1,5 +1,4 @@
 <template>
-    <!--<router-link to="/">Home</router-link> |-->
   
   <router-view/>
 
@@ -21,7 +20,7 @@ userwayscript.setAttribute('id', 'userway-widget-adding-by-vue')
 document.head.appendChild(userwayscript)
 },
 beforeDestroy() {
-// Remove UserWay Widget before destroying
+// Quitando el widget de la aplicacion antes de destruir
 let el = document.getElementById('userway-widget-adding-by-vue')
 if (el) el.remove();
 },
