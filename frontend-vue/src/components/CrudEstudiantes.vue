@@ -42,7 +42,6 @@
             <template #footer>
                 <Button label="No" icon="pi pi-times" class="p-button-text" @click="deleteProductsDialog = false"/>
                 <Button label="Yes" icon="pi pi-check" class="p-button-text" @click="deleteSelectedProducts" />
->>>>>>> 6e9bed5f6051fa33067bd08a5af3db5fee506acf
             </template>
             
         </Dialog>    
@@ -96,12 +95,6 @@
             </template>
             
         </Dialog>
-        
-
->>>>>>> 6e9bed5f6051fa33067bd08a5af3db5fee506acf
-
-        
-
 
 <DataTable ref="dt" :value="Estudiant_table" sortMode="multiple" v-model:selection="selectedProducts" :paginator="true" :rows="5" :first="firstRecordIndex" :filters="filters"
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
@@ -152,7 +145,6 @@ export default {
         return {
             Estudiant_table: null,
             deleteProductsDialog:false,
->>>>>>> 6e9bed5f6051fa33067bd08a5af3db5fee506acf
             displayModal: false,
             filters: {},
             messages: [],
@@ -297,7 +289,7 @@ export default {
 
             return index;
         },
->>>>>>> 6e9bed5f6051fa33067bd08a5af3db5fee506acf
+
         initFilters() {
             this.filters = {
                 'global': {value: null, matchMode: FilterMatchMode.CONTAINS},
