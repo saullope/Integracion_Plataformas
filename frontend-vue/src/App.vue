@@ -2,14 +2,18 @@
   
   <router-view/>
 
-
 </template>
 
 <script>
 
 export default {
+
+  commponents: {
+
+  },
   data(){
     return {
+      msg: "Hola"
     }
   },
  mounted() {
@@ -24,6 +28,10 @@ beforeDestroy() {
 let el = document.getElementById('userway-widget-adding-by-vue')
 if (el) el.remove();
 },
+computed(){
+
+},
+
   methods: {
     }
   }

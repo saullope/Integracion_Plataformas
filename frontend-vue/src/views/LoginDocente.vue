@@ -17,11 +17,11 @@
                 <div class="flex align-items-center justify-content-between mb-7">
                     <span class="text-2xl font-medium text-900">¡Bienvenido Educador!</span>
                 </div>
-               
-            <div v-show="errorlogueo">
+               <!--
+            <div v-if="errorlogueo">
                 <Message severity="error" :closable="true" >Los datos ingresados no son validos.</Message>
             </div>
-
+-->
                 <div class="p-inputgroup">
                     <span class="p-inputgroup-addon">
                         <i class="pi pi-user"></i>
@@ -77,8 +77,8 @@ export default {
             this.errorlogueo = false
         },
         showError(){
-            this.errorlogueo = true
-            setTimeout(this.hidenError, 5000)
+            //this.errorlogueo = true
+            //setTimeout(this.hidenError, 5000)
         },
         session(){
             this.hidenError()            
@@ -90,7 +90,7 @@ export default {
                 console.log(this.respuesta)
                 this.$router.push('/principal')
             }else {
-                this.showError()
+            
             }
         }
     }

@@ -11,16 +11,14 @@
     </div>
             <Toolbar>
                  <template #start>
-                    <div class="grid">
-                        <div class="col-4"></div>
-                        <div class="col-4">
+                        
+                        <div class="col-6">
                             <Button @click="prev" label="Atras" icon="pi pi-angle-left" icon-pos="left"/>
                         </div>   
-                        <div class="col-4">
+                        <div class="col-6 ml-5">
                             <Button @click="next" label="Siguiente" icon="pi pi-angle-right" icon-pos="right"/>
                         </div>
-                        <div class="col-4"></div>
-                    </div>
+
                     </template>
             </Toolbar>
 </div>

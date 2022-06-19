@@ -5,7 +5,7 @@
     <div class="flex align-items-center justify-content-center p-2" style="width:100px">
       <Image src="../img/logo.png" alt="logo del St. Mary School" width="75"/>
     </div>
-    <div class="flex align-items-center justify-content-center" style="width:270px">
+    <div class="flex align-items-center justify-content-start" style="width:270px">
       <h4>Live to Learn, Learn to Live! </h4>
     </div>
     <div class="col"></div>
@@ -15,7 +15,7 @@
       </Menubar>
     </div>
     <div class="flex align-items-center justify-content-end p-3" style="width:200px">
-      <Button @click="seleccionarRol" label="Iniciar Sesion" icon="pi pi-sign-in" class="p-button-primary" />
+      <Button @click="seleccionarRol" label="Iniciar Sesión" icon="pi pi-sign-in" class="p-button-primary" />
     </div>
 </div>
 </div>
@@ -36,9 +36,7 @@
     </div>
 </div>
 
-<div style="height:100px; background-color: #ABBAEA;">
-
-</div>
+<FeatureView />
 
 <FooterMain />
 </template>
@@ -46,13 +44,15 @@
 <script>
 // @ is an alias to /src
 import FooterMain from '@/components/FooterMain.vue'
+import FeatureView from '@/components/FeatureView.vue'
 
 export default {
   name: 'HomeView',
   inject : ['myTokenSession'],
   components: {
-   FooterMain
-  },
+    FooterMain,
+    FeatureView
+},
   data () {
     return {
       mensaje: "Iniciar",
@@ -60,15 +60,11 @@ export default {
 
       items: [
         {
-          label: "Institucion",
+          label: "Institución",
           icon: "pi pi-fw pi-building"
         },
         {
-          label:"Como iniciar",
-          icon:"pi pi-fw pi-question"
-        },
-        {
-          label:"Documentacion",
+          label:"Documentación",
           icon:"pi pi-fw pi-file"
         }
       ]

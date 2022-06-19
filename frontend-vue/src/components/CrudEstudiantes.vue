@@ -3,6 +3,7 @@
         <ToastMessage  />
         <br><br>
         <Toolbar class="mb-4">
+        <div>{{nombre}}</div>
             <template #start>
             <Button label="Nuevo Estudiante" icon="pi pi-plus" class="mr-2" @click="openNew"/>
          
@@ -23,7 +24,7 @@
       <Dialog  :visible="deleteestudianteDialog" :style="{width: '450px'}" header="Confirmar"  :modal="true" @update:visible="handleClose"  >
                 <div class="confirmation-content">
                     <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
-                    <span v-if="estudiantes">¿Desea eliminar este dato? <b>{{}}</b></span>
+                    <span v-if="estudiant">¿Desea eliminar este dato? <b><!--{{}}--></b></span>
                 </div>
                 <template #footer>
                     <Button label="No" icon="pi pi-times" class="p-button-text" @click="deleteestudianteDialog = false"/>
@@ -34,48 +35,57 @@
 
 
 
-         <Dialog  :visible="estudianteDiaalog" :style="{width: '450px'}" header="Detalle de estudiante" :modal="true" class="p-fluid">
-                <div class=" field ">
-                <label for="nombre">Nombre</label>
-                <InputText id="nombre" v-model.trim="nombre" required="true" autofocus :class="{'p-invalid': submitted && !nombre}" />
-                <small class="p-error" v-if="submitted && !Apellidos">Es requerido un nombre.</small>
-               
-               
-            </div>
-            <div class="field "> 
-                <label for="Apellidos">Apellido</label>
-                <InputText id="Apellidos" v-model.trim="Apellidos" required="true" autofocus :class="{'p-invalid': submitted && !Apellidos}" />
-                <small class="p-error" v-if="submitted && !Apellidos">Es requerido un Apellido.</small>
-            </div>
-             <div class="field ">
-                <label for="correo">Correo</label>
-                <InputText id="correo" v-model.trim="correo" required="true" autofocus :class="{'p-invalid': submitted && !correo}" />
-                <small class="p-error" v-if="submitted && !correo">Es requerido un Correo.</small>
-               
-            </div>
+  
+    
+        <Dialog v-model:visible="estudianteDialog" header="Añadir nuevo estudiante" :modal="true" :breakpoints="{ '960px': '80vw' }" :style="{ width: '50vw' }" position="center">
+            <div class="card">
+                <div class="grid p-3">
+                    <div class="col-12 md:col-6 p-2">
+                        <label for="basic" class="mr-2">Nombre</label>
+                        <InputText id="basic" v-model="nombre" autocomplete="off" />
+                    </div>
+                    <div class="col-12 md:col-6 p-2">
+                        <label for="basic" class="mr-2">Apellidos</label>
+                        <InputText id="basic" v-model="nombre" autocomplete="off" />
+                    </div>
+                    <div class="col-12 md:col-6 p-2">
+                        <label for="basic" class="mr-2">Grupos</label>
+                        <MultiSelect v-model="selectedCities2" :options="grupos" optionLabel="name" placeholder="Select Cities" display="chip" />
 
+                    </div>
+
+            </div>
+            </div>
             <template #footer>
-                <Button label="Cancelar" icon="pi pi-times" class="p-button-text" @click="estudianteDialog = false"/>
-                <Button label="Guardar" icon="pi pi-check" class="p-button-text" @click="hideDialog " />
+                <div class="flex justify-content-center">
+                    <Button label="Guardar" @click="toggleDialog" class="p-button-outlined" />
+                    <Button label="Cancelar" @click="estudianteDialog = false" class="p-button-outlined p-button-danger" />
+
+                </div>
             </template>
+            
         </Dialog>
 
 
+    
 
-<DataTable ref="dt" :value="estudiantes" sortMode="multiple" :selection="selectedProducts" :paginator="true" :rows="5" :first="firstRecordIndex" :filters="filters"
+
+        
+
+
+<DataTable ref="dt" :value="Estudiant_table" sortMode="multiple" v-model:selection="selectedProducts" :paginator="true" :rows="5" :first="firstRecordIndex" :filters="filters"
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
                     currentPageReportTemplate="Mostrando {first} de {totalRecords} Estudiantes" 
-                    :globalFilterFields="['nombre','apellidos','id','carnet','grupo','direccion.ciudad']"
+                    :globalFilterFields="['nombre','apellidos','idEstudiante','carnetEstudiante','NombreGrupo','ciudadDepartamento']"
                     :v-model:filters="filters">
-    
     <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
-    <Column field="id" header="Id" :sortable="true"></Column>
+    <Column field="idEstudiante" header="Id" :sortable="true"></Column>
     <Column field="nombre" header="Nombre" :sortable="true"></Column>
     <Column field="apellidos" header="Apellidos" :sortable="true"></Column>
-    <Column field="carnet" header="Carnet" :sortable="true"></Column>
-    <Column field="grupo" header="Grupo" :sortable="true"></Column>
-    <Column field="correo" header="Correo" :sortable="true"></Column>
-    <Column field="direccion.ciudad" header="Domicilio" :sortable="true"></Column>
+    <Column field="carnetEstudiante" header="Carnet" :sortable="true"></Column>
+    <Column field="NombreGrupo" header="Grupo" :sortable="true"></Column>
+    <Column field="ciudadDepartamento" header="Departamento" :sortable="true"></Column>
+ 
      <Column header="Opciones" :exportable="false" style="min-width:8rem">
               <template #body="estudiantes">
                <Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editProduct(estudiantes)" />
@@ -88,69 +98,69 @@
         <!-- fin del cuerpo del data table -->
     </div>
 
- <!--  <Dialog header="Agregar nuevo estudiante" v-model:visible="estudianteDialog" :style="{width: '50vw'}" :modal="true">
-            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <template #footer>
-                <Button label="Cancelar" icon="pi pi-times" @click="estudianteDialog= false" class="p-button-text"/>
-                <Button label="Guardar" icon="pi pi-check" @click="saveInfo" autofocus />
-            </template>
-    </Dialog> 
- -->
+
 
     
 </template>
 
 <script>
 import {FilterMatchMode} from 'primevue/api';
-import InformacionEstudiantes from '@/service/InformacionEstudiantes'
+import Estudiantes from '@/service/Estudiantes';
 import Dialog from 'primevue/dialog';
+import { global } from '../global';
 
 export default {
     components: {
-        InformacionEstudiantes
+        Estudiantes,
+        Dialog
     },
     data(){
         return {
+            datos: global,
+            Estudiant_table: null,
             originaldata:[],
             displayModal: false,
             filters: {},
             messages: [],
             columns:null,
             submitted: false,
-            estudiantes:null,
             estudianteDialog: false,
             selectedProducts: null,
             deleteestudianteDialog: false,
+            submitted: false,
             grupos: [
-				{label: '1 A', value: '1 A'},
-				{label: '1 B', value: '1 B'},
-				{label: '2 A', value: '2 A'},
-                {label: '2 B', value: '2 B'},
+				{label: '3ro A', value: '3ro A'},
+				{label: '3ro B', value: '3ro B'},
+				{label: '4to A', value: '4to A'},
+                {label: '4to B', value: '4to B'},
+                {label: '5to A', value: '5to A'},
             ],
             ciudades: [
 				{label: 'Carazo', value: 'Carazo'},
 				{label: 'Managua', value: 'Managua'},
 				{label: 'Masaya', value: 'Masaya'},
                 {label: 'Granada', value: 'Granada'},
+                {label: 'Leon', value: 'Leon'},
+                {label: 'Chinandega', value: 'Chinandega'},
+                {label: 'Boaco', value: 'Boaco'},
+                {label: 'Esteli', value: 'Esteli'},
             ],
 
       
   
         }
     },
-    InformacionEstudiantes:null,
+   
 
   
     created(){
-        this.InformacionEstudiantes = new InformacionEstudiantes();
+        this.Estudiantes = new Estudiantes();
         this.initFilters();
     },
 
     mounted(){
      
-        this.InformacionEstudiantes.getStudents().then(data => this.estudiantes = data);
+        this.Estudiantes.getEstudiantes().then(data => this.Estudiant_table = data);
         this.originaldata = this.data;
         
         },
@@ -171,7 +181,7 @@ export default {
      
         },
         openNew() {
-            this.estudiantes = {};
+            
             this.submitted = false;
             this.estudianteDialog = true;
         },
@@ -179,23 +189,7 @@ export default {
             this.$refs.dt.exportCSV();
         },
 
-         editProduct(estudiantes) {
-            this.estudiantes = {...estudiantes};
-            this.productDialog = true;
-        },
-        confirmDeleteProduct(estudiantes) {
-            this.estudiantes = estudiantes;
-            this.deleteProductDialog = true;
-        },
-        deleteProduct() {
-            this.estudiantes = this.estudiantes.filter(val => val.id !== this.product.id);
-            this.deleteProductDialog = false;
-            this.estudiante = {};
-            this.$toast.add({severity:'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
-        },
-        deleteestudiante() {
-            this.deleteestudianteDialog = true;
-        },
+        
         initFilters() {
             this.filters = {
                 'global': {value: null, matchMode: FilterMatchMode.CONTAINS},
