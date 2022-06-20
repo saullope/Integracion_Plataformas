@@ -96,26 +96,46 @@
             
         </Dialog>
 
-<DataTable ref="dt" :value="Estudiant_table" sortMode="multiple" v-model:selection="selectedProducts" :paginator="true" :rows="5" :first="firstRecordIndex" :filters="filters"
+<DataTable ref="dt" :value="Estudiant_table" sortMode="multiple" editMode="cell" @cell-edit-complete="onCellEditComplete"
+                    v-model:selection="selectedProducts" :paginator="true" :rows="5" :first="firstRecordIndex" :filters="filters"
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
                     currentPageReportTemplate="Mostrando {first} de {totalRecords} Estudiantes" 
+                    class="editable-cells-table"
                     :globalFilterFields="['nombre','apellidos','idEstudiante','carnetEstudiante','NombreGrupo','ciudadDepartamento']"
-                    :v-model:filters="filters">
+                    :v-model:filters="filters" editable:true>
     <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
-    <Column field="idEstudiante" header="Id" :sortable="true"></Column>
-    <Column field="nombre" header="Nombre" :sortable="true"></Column>
-    <Column field="apellidos" header="Apellidos" :sortable="true"></Column>
-    <Column field="carnetEstudiante" header="Carnet" :sortable="true"></Column>
-    <Column field="NombreGrupo" header="Grupo" :sortable="true"></Column>
-    <Column field="ciudadDepartamento" header="Departamento" :sortable="true"></Column>
- 
-     <Column header="Opciones" :exportable="false" style="min-width:8rem">
+    <Column field="idEstudiante" header="Id" :sortable="true" ></Column>
+    <Column field="nombre" header="Nombre" :sortable="true"  >
+     <template #editor="{ data, field }">
+                        <InputText v-model="data[field]" autofocus />
+                    </template></Column>
+    <Column field="apellidos" header="Apellidos" :sortable="true" >
+     <template #editor="{ data, field }">
+                        <InputText v-model="data[field]" autofocus />
+                    </template></Column>
+    <Column field="carnetEstudiante" header="Carnet" :sortable="true " >
+     <template #editor="{ data, field }">
+                        <InputText v-model="data[field]" autofocus />
+                    </template>
+    </Column>
+    <Column field="NombreGrupo" header="Grupo" :sortable="true" >
+     <template #editor="{ data, field }">
+                        <InputText v-model="data[field]" autofocus />
+                    </template> </Column> 
+    <Column field="ciudadDepartamento" header="Departamento" :sortable="true" >
+    
+     <template #editor="{ data, field }">
+                        <InputText v-model="data[field]" autofocus />
+                    </template></Column>
+   <Column :rowEditor="true" style="width:10%; min-width:8rem" bodyStyle="text-align:center"></Column>
+   
+    <!--    <Column header="Opciones" :exportable="false" style="min-width:8rem">
               <template #body="datos">
                <Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="EditarEstudiantes(datos)" />
-             <!--   <Button icon="pi pi-trash" class="p-button-danger" @click="deleteestudianteDialog = true" />-->
+                <Button icon="pi pi-trash" class="p-button-danger" @click="deleteestudianteDialog = true" />
               </template>
-     </Column>
-
+     </Column> 
+-->
 </DataTable>
 
         <!-- fin del cuerpo del data table -->
@@ -209,7 +229,7 @@ export default {
         }
     },
     methods: {
-
+        
         hideDialog() {
             this.estudianteDialog = false;
      
@@ -241,9 +261,25 @@ export default {
           confirmDeleteSelected() {
             this.deleteProductsDialog = true;
         },
-        EditarEstudiantes(datos) {
-            this.datos = {...datos};
-            this.estudianteDialog = true;
+       onCellEditComplete(event) {
+            let { data, newValue, field } = event;
+
+            switch (field) {
+                case 'quantity':
+                case 'price':
+                    if (this.isPositiveInteger(newValue))
+                        data[field] = newValue;
+                    else
+                        event.preventDefault();
+                break;
+
+                default:
+                    if (newValue.trim().length > 0)
+                        data[field] = newValue;
+                    else
+                        event.preventDefault();
+                break;
+            }
         },
         guardarestudiante(){
             this.submitted = true;
